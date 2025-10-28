@@ -114,7 +114,7 @@ error:function (){}
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="shortcut icon" href="assets/images/logos.jpeg">
+    <link rel="shortcut icon" href="assets/images/bablog.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="style.css" />
@@ -127,7 +127,8 @@ error:function (){}
         <div class="signin-signup">
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  method="post" class="sign-in-form">
             <div class="signin">
-            <h2 class="title">Sign in</h2>
+              <img src="img/bablog.png" alt="pig" style="display: block; margin: 0 auto 10px; object-fit: contain;" class="signin-image" width="100" height="100">
+            <h1 class="title">SIGN IN</h1>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="email" name="username" placeholder="Username" required />
@@ -150,7 +151,8 @@ error:function (){}
           
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="sign-up-form" onsubmit="return validatePassword();">
           <div class="signin">
-          <h2 class="title">Sign up</h2>
+             <img src="img/bablog.png" alt="pig" style="display: block; margin: 0 auto 10px; object-fit: contain;" class="signin-image" width="100" height="100">
+          <h2 class="title">SIGN UP</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="fullName" placeholder="Full Name" required/>

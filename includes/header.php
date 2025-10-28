@@ -31,7 +31,7 @@ $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
   <div class="container m-3 p-3">
       <div class="row w-100 m-0 p-0 g-0"> 
         <div class="col-sm-2 col-md-2  w-100">
-          <div class="logo"><a href="index.php"><img src="img/logos.png" alt="image" width="50" height="50"><span style="color: #00bf63;font:italic;font-weight:bold;"><em></em></span></div>
+          <div class="logo"><a href="index.php"><img src="img/bablog.png" alt="image" width="75" height="60"><span style="color: #00bf63;font:italic;font-weight:bold;"><em></em></span></div>
         </div>
         <div class="col-sm-9 col-md-10 ">
           <div class="header_info ">
@@ -45,11 +45,11 @@ $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
               <a href="tel:61-1234-5678-09">09262026959</a> </div>
             <div class="social-follow">
               <ul>
-                <li><a href="https://code-projects.org/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.facebook.com/alfred.cornesio.92"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
                 <li><a href="https://code-projects.org/"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
                 <li><a href="https://code-projects.org/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
                 <li><a href="https://code-projects.org/"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-                <li><a href="https://code-projects.org/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/explore/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
               </ul>
             </div>
 

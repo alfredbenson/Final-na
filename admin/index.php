@@ -34,7 +34,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 
 	<title>Admin Login</title>
 	<link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+	<link rel="icon" type="image/x-icon" href="img/bablog.png">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 	<script src="js/swal.js"></script>
@@ -51,7 +51,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 				<div class="loginan">
 					<form method="post">
 				<div class="loginform">
-						<img src="img/logos.jpeg" alt="pig">
+						<img src="img/bablog.png" alt="pig">
 						<h1 class="okie">Welcome</h1>
 
 						<div class="input-div user">

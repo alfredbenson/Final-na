@@ -119,7 +119,7 @@ if ($query) {
 	<title>Pig Growing Phase</title>
 	<!-- CSS -->
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+<link rel="icon" type="image/x-icon" href="img/bablog.png">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,7 +169,7 @@ if ($query) {
 </div>
 </div>
 						<button type="button" title="Click to Add" data-bs-toggle="modal" data-bs-target="#addModal"
-    class="openModalBtn d-none" ><i class='bx bx-plus-circle' style=""></i> Add New</button>
+    class="openModalBtn d-none" ><i class='bx bx-plus-circle' ></i> Add New</button>
 					</div>
 
 					<ul class="breeders" id="carList">

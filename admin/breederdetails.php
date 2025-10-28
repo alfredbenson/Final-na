@@ -501,7 +501,7 @@ if (isset($_POST['recordid'])) {
 	<title>Pig Breeders</title>
 	<!-- CSS -->
 <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+<link rel="icon" type="image/x-icon" href="img/bablog.png">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -907,13 +907,13 @@ if (isset($_POST['recordid'])) {
                 <table id="myTable">
 						<thead>
 							<tr>
-                                <th>ID</th>
-								<th>Name</th>
-                                <th>Date Farrowed</th>
-								<th>Weaned Date</th>
-                                <th>Total Piglets</th>
-                                <th>Survived Piglets</th>
-                                <th>Action</th>
+                                <th class="text-center">ID</th>
+								<th class="text-center">Name</th>
+                                <th class="text-center">Date Farrowed</th>
+								<th class="text-center">Weaned Date</th>
+                                <th class="text-center">Total Piglets</th>
+                                <th class="text-center">Survived Piglets</th>
+                                <th class="text-center">Action</th>
                                 
 							</tr>
 						</thead>
@@ -937,18 +937,18 @@ if (isset($_POST['recordid'])) {
                           ?>
                               
                               <tr>
-	<td>
+	<td class="text-center">
 	<p><?php echo htmlentities($result->id); ?></p>
 		</td>
 
-	<td><?php echo htmlentities($result->pig_name); ?></td>
-	<td><?php echo htmlentities($formatteddates); ?></td>
-    <td><?php echo htmlentities($formatteddate); ?></td>
-    <td><?php echo htmlentities($result->total_piglets);?></td>
-    <td><?php echo htmlentities($result->survived); ?></td>
+	<td class="text-center"><?php echo htmlentities($result->pig_name); ?></td>
+	<td class="text-center"><?php echo htmlentities($formatteddates); ?></td>
+    <td class="text-center"><?php echo htmlentities($formatteddate); ?></td>
+    <td class="text-center"><?php echo htmlentities($result->total_piglets);?></td>
+    <td class="text-center"><?php echo htmlentities($result->survived); ?></td>
  
     <!-- Button trigger modal -->
-    <td class="action">
+    <td class="action text-center">
     <button type="button" class="btn deleterecord" title="Delete Record" data-bs-toggle="modal" data-bs-target="#deleteModalrecord-<?php echo htmlentities($result->id); ?>" data-id="<?php echo htmlentities($result->id); ?>" data-breeder-id="<?php echo htmlentities($result->breeder_id); ?>"> <i class='bx bx-trash'></i></button>
 
     <!-- <button type="button" class="btn btn-sm updateModalBtn" title="Update Pig" data-bs-toggle="modal" data-bs-target="#updateModals" data-feedIds="<?php echo $result->id; ?>"><i class='bx bx-edit'></i></button> -->

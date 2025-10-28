@@ -77,7 +77,7 @@ $_SESSION['sidebarname'] = 'Messages';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Messages</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+<link rel="icon" type="image/x-icon" href="img/bablog.png">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">

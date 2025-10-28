@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['weight'])) {
     <!--bootstrap-slider -->
     <!--FontAwesome Font Style -->
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/logos.jpeg">
+    <link rel="shortcut icon" href="assets/images/bablog.png">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 </head>
 

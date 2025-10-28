@@ -1,6 +1,6 @@
 <section id="sidebar">
 		<a href="#" class="brand">
-			<img src="img/logos.jpeg" alt="piglogo" width="64px" height="64px">
+			<img src="img/bablog.png" alt="piglogo" width="64px" height="64px">
 			<span class="text">Ronald's Baboyan</span>
 		</a>
 		<ul class="side-menu top">

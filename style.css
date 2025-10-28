@@ -81,6 +81,8 @@ form.sign-in-form .signin{
 padding: 34px;
 border-radius: 25px;
 box-shadow: 0 .8rem 1rem .5rem rgba(11, 93, 32, 0.407);
+width: 450px;
+height: 450px;
 }
 form.sign-in-form .signin .title{
   text-align: center;
@@ -101,6 +103,8 @@ form.sign-up-form .signin{
 padding: 30px;
 border-radius: 25px;
 box-shadow: 0 .8rem 1rem .5rem rgba(11, 93, 32, 0.407);
+width: 460px;
+
 }
 form.sign-up-form .signin .title{
   text-align: center;
@@ -118,8 +122,10 @@ form.sign-up-form .signin .btn{
 
 
 .title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
   font-size: 2.2rem;
-  color: #444;
+  color: #1c5f3d;
   margin-bottom: 10px;
 }
 
@@ -227,9 +233,24 @@ form.sign-up-form .signin .btn{
   transition: 0.5s;
 }
 
-.btn:hover {
-  background-color: #036035;
+.btn {
+  background: linear-gradient(to right, #036035, #036035); /* start as solid */
+  background-size: 200% auto;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.5s ease; /* smooth slide */
 }
+
+/* Inig hover, mo-slide ang gradient color */
+.btn:hover {
+  background-image: linear-gradient(to right, #32be8f, #036035, #32be8f);
+  background-position: right center;
+}
+
+
 .panels-container {
   position: absolute;
   height: 100%;
@@ -311,6 +332,7 @@ form.sign-up-form .signin .btn{
 .right-panel .image,
 .right-panel .content {
   transform: translateX(800px);
+  
 }
 
 /* ANIMATION */
@@ -327,10 +349,11 @@ form.sign-up-form .signin .btn{
 
 .container.sign-up-mode .signin-signup {
   left: 25%;
+  
 }
 
 .container.sign-up-mode form.sign-up-form {
-  height: 700px;
+  height: 800px;
   opacity: 1;
   z-index: 2;
 }
@@ -338,15 +361,18 @@ form.sign-up-form .signin .btn{
 .container.sign-up-mode form.sign-in-form {
   opacity: 0;
   z-index: 1;
+  
 }
 
 .container.sign-up-mode .right-panel .image,
 .container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
+ 
 }
 
 .container.sign-up-mode .left-panel {
   pointer-events: none;
+  
 }
 
 .container.sign-up-mode .right-panel {
@@ -452,7 +478,7 @@ form.sign-up-form .signin .btn{
   }
 
   .container.sign-up-mode .signin-signup {
-    top: 5%;
+    top: -3%;
     transform: translate(-50%, 0);
   }
 }

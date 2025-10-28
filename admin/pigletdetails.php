@@ -368,7 +368,7 @@ if(isset($_POST['addcull'])){
         <title>Pig</title>
         <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+    <link rel="icon" type="image/x-icon" href="img/bablog.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -874,7 +874,7 @@ if(isset($_POST['addcull'])){
 		</td>
         <td class="text-center"><?php echo htmlentities($result->vaccined_by); ?></td>
 	<td class="text-center"><?php echo htmlentities($result->vaccine_name); ?></td>
-	<td><?php echo htmlentities($formatteddates); ?></td>
+	<td class="text-center"><?php echo htmlentities($formatteddates); ?></td>
 
  
     <!-- Button trigger modal -->

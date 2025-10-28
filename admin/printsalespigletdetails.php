@@ -42,7 +42,7 @@ if ($order) {
 $companyName = "Ronalds Baboyan";
 $companyLocation = "Brgy. San Isidro, San Fernando Cebu";
 $companyContact = "0912-345-6789";
-$logoPath = "img/logos.jpeg";
+$logoPath = "img/bablog.png";
 
 
 ?>

@@ -33,7 +33,7 @@ $age = $daysDifference;
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Piglet Details</title>
-<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+<link rel="icon" type="image/x-icon" href="img/bablog.png">
 <style>
     img { width: 600px; height: auto; margin-bottom: 20px; border: 2px solid #ccc; border-radius: 10px; }
     h2 { margin-bottom: 20px; }

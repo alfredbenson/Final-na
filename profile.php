@@ -53,7 +53,7 @@ exit;
 <!--FontAwesome Font Style -->
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel="shortcut icon" href="assets/images/logos.jpeg">
+<link rel="shortcut icon" href="assets/images/bablog.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
  <style>
 
@@ -202,6 +202,7 @@ foreach($results as $result)
         
    
 </div>
+
 <?php }} ?>
            
             <!-- Modal footer -->
@@ -217,6 +218,8 @@ foreach($results as $result)
 <br>
 <br>
 <br>
+
+
 <!--/Profile-setting--> 
 
 <!--Footer -->
@@ -239,48 +242,57 @@ foreach($results as $result)
 <!--Forgot-password-Form -->
 <?php include('includes/forgotpassword.php');?>
 <!--/Forgot-password-Form --> 
+<!-- SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
-    // Attach the submit event listener to the updateForm
-    updateForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the default form submission
+document.getElementById("updateForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent normal form submission
 
-        // Retrieve the form field values
-        const fullName = document.querySelector('#updateModal [name="fullname"]').value;
-        const phoneNumber = document.querySelector('#updateModal [name="phoneNumber"]').value;
-        const dob = document.querySelector('#updateModal [name="dob"]').value;
-        const address = document.querySelector('#updateModal [name="address"]').value;
+  // Get input values
+  const fullName = document.querySelector('#updateModal [name="fullname"]').value.trim();
+  const phoneNumber = document.querySelector('#updateModal [name="phoneNumber"]').value.trim();
+  const dob = document.querySelector('#updateModal [name="dob"]').value.trim();
+  const address = document.querySelector('#updateModal [name="address"]').value.trim();
 
-        // Create a new FormData object and append the form data
-        const formData = new FormData();
-        formData.append('fullname', fullName);
-        formData.append('phoneNumber', phoneNumber);
-        formData.append('dob', dob);
-        formData.append('address', address);
-        formData.append('updateprofile', true); // Add this to indicate the form submission
+  // ✅ PHONE VALIDATION (11 digits, numbers only)
+  const phoneRegex = /^[0-9]{11}$/;
+  if (!phoneRegex.test(phoneNumber)) {
+    swal("Error", "Phone number must be 11 digits and numbers only!", "error");
+    document.querySelector('#updateModal [name="phoneNumber"]').focus();
+    return false;
+  }
 
-        // Create an XMLHttpRequest object
-        const xhr = new XMLHttpRequest();
+  // ✅ DATE OF BIRTH VALIDATION (must be 20 years old)
+  if (!dob) {
+    swal("Error", "Please enter your date of birth!", "error");
+    document.querySelector('#updateModal [name="dob"]').focus();
+    return false;
+  }
 
-        // Define the AJAX request
-        xhr.open('POST', '<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>', true);
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Request successful
-                    console.log(xhr.responseText);
-                    // Reload the page to update the profile information
-                    location.reload();
-                } else {
-                    // Request failed
-                    console.error('Error:', xhr.status);
-                }
-            }
-        };
+  const birthDate = new Date(dob);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
 
-        // Send the AJAX request with the form data
-        xhr.send(formData);
-    });
+  if (isNaN(age)) {
+    swal("Error", "Please enter a valid date of birth!", "error");
+    return false;
+  }
+
+  if (age < 20) {
+    swal("Error", "You must be at least 20 years old!", "error");
+    return false;
+  }
+
+  // ✅ SUCCESS MESSAGE ONLY
+  swal("Success", "Your information has been validated successfully!", "success");
+});
 </script>
+
 <!-- Scripts --> 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script> 

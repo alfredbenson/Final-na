@@ -72,7 +72,7 @@ if(strlen($_SESSION['login']) == 0) {
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./admin/js/swal.js"></script>
-<link rel="shortcut icon" href="assets/images/logos.jpeg">
+<link rel="shortcut icon" href="assets/images/bablog.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 <style>
     .errorWrap {
@@ -122,7 +122,7 @@ if(strlen($_SESSION['login']) == 0) {
       <div class="col-md-3 col-sm-3">
         <?php include('includes/sidebar.php');?>
       <div class="col-md-6 col-sm-8">
-        <div class="profile_wrap" style="">
+        <div class="profile_wrap">
         <form method="post" action="<?=$_SERVER['PHP_SELF']?>" onSubmit="return valid();">
              <?php if($error){?><div class="errorWrap" style="color:red;"><strong>ERROR</strong>:<?php echo $error; ?></div><?php } 
         else if($msg){?><div class="succWrap" style="color:green;"><strong>SUCCESS</strong>:<?php echo $msg; ?> </div><?php }?>
@@ -140,7 +140,8 @@ if(strlen($_SESSION['login']) == 0) {
               <input class="form-control black_bg" id="confirmpassword" type="password" name="confirmpassword"  required>
             </div>
           <br>
-            <div class="contact_form">
+          <br>
+          <br>            <div class="contact_form">
                <input type="submit" value="Update" name="update" id="submit"  style="width: 160px;" class="btn btn-block" style="background-color: #076037;">
             </div>
           </form>
@@ -161,59 +162,61 @@ if(strlen($_SESSION['login']) == 0) {
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
 <!--/Back to top--> 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- ✅ Include SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<!-- ✅ Include SweetAlert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script>
 function valid() {
-  // const checkpass =awat $.ajax({
-  //   url:"check_availability.php",
-  //   type:"POST",
-  //   dataType:"json",
-  //   data:{pass:$("#password").val()}
-  // });
+  const newPassword = document.getElementById('newpassword').value.trim();
+  const confirmPassword = document.getElementById('confirmpassword').value.trim();
 
-  // if (checkpass.status="wrongpass"){
-  //   swal("Error","Inputted Password doesn't match your current password","")
-  //   return false;
-  // }
-  if (document.getElementById('newpassword').value !== document.getElementById('confirmpassword').value) {
-    swal("Error","New Password and Confirm Password do not match!","error");
-    document.getElementById('confirmpassword').value = ''; /
+  // ✅ Check if new password is at least 8 characters
+  if (newPassword.length < 8) {
+    swal({
+      title: "Error",
+      text: "New Password must be at least 8 characters long!",
+      icon: "error",
+      button: "OK"
+    });
+    document.getElementById('newpassword').focus();
+    return false;
+  }
+
+  // ✅ Check if new password and confirm password match
+  if (newPassword !== confirmPassword) {
+    swal({
+      title: "Error",
+      text: "New Password and Confirm Password do not match!",
+      icon: "error",
+      button: "OK"
+    });
+    document.getElementById('confirmpassword').value = '';
     document.getElementById('confirmpassword').focus();
     return false;
   }
+
+  // ✅ Success Message with OK button
+  swal({
+    title: "Success",
+    text: "Password successfully validated!",
+    icon: "success",
+    button: "OK"
+  });
+
   return true;
 }
-
 </script>
-<!-- Scripts --> 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/js/interface.js"></script> 
-<!--Switcher-->
 
-<!--bootstrap-slider-JS--> 
-<script src="assets/js/bootstrap-slider.min.js"></script> 
-
-<script src="assets/js/owl.carousel.min.js"></script>
-<?php if (isset($success)) { ?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-    swal("Success", "<?= addslashes($success) ?>", "success");
-  }, 100);
-  $('[data-bs-toggle="popover"]').popover();
-});
-</script>
-<?php } elseif (isset($err)) { ?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function() {
-    swal("Error", "<?= addslashes($err) ?>", "error");
-  }, 100);
-});
-</script>
 <?php } ?>
+
+
 
 </body>
 </html>
-<?php } ?>
+
 

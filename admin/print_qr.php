@@ -11,7 +11,7 @@ $qrImagePath = $img;
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ronald's Baboyan</title>
-<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
+<link rel="icon" type="image/x-icon" href="img/bablog.png">
     <style>
         body { text-align: center; padding-top: 50px; }
         img { width: 600px; height: 600px; }

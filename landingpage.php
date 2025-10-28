@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-   <link rel="shortcut icon" href="assets/images/logos.jpeg">
+   <link rel="shortcut icon" href="assets/images/bablog.png">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <!-- Scripts -->
  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="d-flex align-items-center navlogo">
         <a class="navbar-brand" href="#home">
           <h5>
-            <img src="img/logos.jpeg" alt="logo">
+            <img src="img/bablog.png" alt="logo">
             <span style="color: #00bf63;">Ronald's</span> Baboyan
           </h5>
         </a>
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2 class="pigtitle">Available Pigs</h2>
     <p style="text-align: center;">We have pigs available in the following weight ranges.</p>
    
-  <div class="card__container swiper" style="">
+  <div class="card__container swiper" >
             <div class="card__content">
                <div class="swiper-wrapper">
                <?php
@@ -254,7 +254,7 @@ $maxPrice = $maxWeight * $pricePerKg;
       </div>
 </form>
 </div>
-<div class="image-column" style="">
+<div class="image-column" >
   <img src="img/message.svg" class="contact" alt="contact-us" />
   </div>
 </div>
