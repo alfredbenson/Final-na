@@ -184,30 +184,26 @@ error:function (){}
             <div class="input-field">
               <i class="fas fa-lock"></i>
               <input type="password" id="signin-password" name="password" placeholder="Password" required />
-  <span class="toggle-password" onclick="togglePasswordVisibility('signin-password')">
-    <i id="signin-password-eye-icon" class="fas fa-eye-slash"></i>
-  </span>
-</div>
+            <span class="toggle-password" onclick="togglePasswordVisibility('signin-password')">
+              <i id="signin-password-eye-icon" class="fas fa-eye-slash"></i>
+            </span>
+            </div>
             <div class="input-field" id="confirm">
               <i class="fas fa-lock"></i>
               <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm Password" required />
-  <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">
-    <i id="confirm-password-eye-icon" class="fas fa-eye-slash"></i>
-  </span>
-</div>
+            <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">
+              <i id="confirm-password-eye-icon" class="fas fa-eye-slash"></i>
+            </span>
+            </div>
             
        
             <input type="submit" class="btn" name="signup" value="Signup" onclick="return validatePassword();"/>
             </div>
           </form>
-
-
-
           <br>
           <br>
         </div>
       </div>
-
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
@@ -238,10 +234,11 @@ error:function (){}
       </div>
     </div>
     <script>
-      document.getElementById('dob').addEventListener('focus', function (e) {
-    e.target.type = 'date';
+document.getElementById('dob').addEventListener('focus', function (e) {
+  e.target.type = 'date';
 });
-      function togglePasswordVisibility(inputId) {
+
+function togglePasswordVisibility(inputId) {
   var passwordInput = document.getElementById(inputId);
   var eyeIcon = document.getElementById(inputId + "-eye-icon");
 
@@ -257,63 +254,75 @@ error:function (){}
 }
 
 function validatePassword() {
-    var password = document.getElementById("signin-password").value;
-    var confirmPassword = document.getElementById("confirm-password").value;
-    var confirmPasswordFields = document.getElementById("confirm-password");
-    var confirmPasswordField = document.getElementById("confirm");
-    var dob = document.getElementById("dob").value;
-    var mobile = document.getElementById("mobilenumber").value.trim();
+  // ✅ Get all fields
+  var fields = [
+    { id: "fullname", name: "Full Name" },
+    { id: "email", name: "Email" },
+    { id: "mobilenumber", name: "Mobile Number" },
+    { id: "dob", name: "Date of Birth" },
+    { id: "signin-password", name: "Password" },
+    { id: "confirm-password", name: "Confirm Password" }
+  ];
 
-    if (password.length < 8)  {
-        swal("Error", "Password must be 8  characters or higher", "error");
-      // alert("Password must be 8  characters or higher");
-      return false; 
+  var missingFields = [];
+
+  // ✅ Check if any required field is empty
+  fields.forEach(function(field) {
+    var input = document.getElementById(field.id);
+    if (input && input.value.trim() === "") {
+      missingFields.push(field.name);
     }
+  });
 
-    if (password !== confirmPassword) {
-           swal("Error", "Passwords do not match", "error");
-        // alert("Passwords do not match");
-        confirmPasswordField.value = "";
-        confirmPasswordField.style.border = "2px solid red";
-        confirmPasswordField.focus();
-        return false;
-    } else {
-        confirmPasswordField.style.border = ""; 
-    }
+  if (missingFields.length > 0) {
+    swal("Error", "Please fill in the following fields:\n\n" + missingFields.join(", "), "error");
+    return false;
+  }
 
-    var mobileRegex = /^[0-9]{11}$/; 
-    if (!mobileRegex.test(mobile)) {
-           swal("Error", "Mobile number must contain digits only", "error");
-        // alert("Mobile number must contain digits only");
+  // ✅ Password length validation
+  var password = document.getElementById("signin-password").value;
+  var confirmPassword = document.getElementById("confirm-password").value;
+  if (password.length < 8) {
+    swal("Error", "Password must be at least 8 characters long", "error");
+    return false;
+  }
 
-        return false;
-    }
+  // ✅ Password match validation
+  if (password !== confirmPassword) {
+    swal("Error", "Passwords do not match", "error");
+    return false;
+  }
 
+  // ✅ Mobile number validation (must be 11 digits)
+  var mobile = document.getElementById("mobilenumber").value.trim();
+  var mobileRegex = /^[0-9]{11}$/;
+  if (!mobileRegex.test(mobile)) {
+    swal("Error", "Mobile number must contain 11 digits only", "error");
+    return false;
+  }
 
+  // ✅ Age validation (must be 20 or older)
+  var dob = document.getElementById("dob").value;
   if (dob) {
-        var today = new Date();
-        var birthDate = new Date(dob);
-        var age = today.getFullYear() - birthDate.getFullYear();
-        var monthDiff = today.getMonth() - birthDate.getMonth();
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
+    var today = new Date();
+    var birthDate = new Date(dob);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var monthDiff = today.getMonth() - birthDate.getMonth();
 
-        if (age < 20) {
-               swal("Error", "You must be at least 20 years old to sign up", "error");
-            // alert("You must be at least 20 years old to sign up");
-            return false;
-        }
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
     }
 
+    if (age < 20) {
+      swal("Error", "You must be at least 20 years old to sign up", "error");
+      return false;
+    }
+  }
 
-
-
-    return true; 
+  return true;
 }
+</script>
 
-    </script>
-    
     <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script> 
 <script src="assets/js/interface.js"></script> 

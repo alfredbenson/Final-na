@@ -9,7 +9,7 @@
           </span>
           <span class="line">|</span>
           Copyright <span style="color:rgb(20, 150, 15);">&copy;</span> <?php echo date('Y');?>
-          <a>Ronald's Baboyan</a>. All rights reserved.
+          <a style="color:rgb(20, 150, 15);">Ronald's Baboyan</a>. All rights reserved.
         </p>
       </div>
     </div>
