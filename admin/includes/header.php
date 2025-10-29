@@ -22,11 +22,11 @@ $querynotif = $dbh->prepare("SELECT
   END AS status_date
 FROM tblgrowingphase
 WHERE (
-  (status = 'piggybloom' AND piggybloom > NOW()) OR
-  (status = 'prestarter' AND prestarter > NOW()) OR
-  (status = 'starter' AND starter > NOW()) OR
-  (status = 'grower' AND grower > NOW()) OR
-  (status = 'finisher' AND finisher > NOW())  
+  (status = 'piggybloom' AND piggybloom >= DATE(NOW()) - INTERVAL 1 DAY) OR
+  (status = 'prestarter' AND prestarter >= DATE(NOW()) - INTERVAL 1 DAY) OR
+  (status = 'starter' AND starter >= DATE(NOW()) - INTERVAL 1 DAY) OR
+  (status = 'grower' AND grower >= DATE(NOW()) - INTERVAL 1 DAY) OR
+  (status = 'finisher' AND finisher >= DATE(NOW()) - INTERVAL 1 DAY)  
 )
   AND posted != 1 order by status_date
 ");

@@ -1705,8 +1705,7 @@ input.newsletter-input {
   padding-top: 10px;
 }
 .footer-bottom {
-
-  background: #fafafa none repeat scroll 0 0;
+  background: #076037;
   padding: 22px 0;
 }
 .footer_widget {
@@ -1744,7 +1743,7 @@ input.newsletter-input {
   text-align: center;
   color: #010101;
   font-size: 15px;
-  line-height: 40px;
+  /*line-height: 40px;*/
   margin: 0 auto;
   display: flex;
   align-items: center;

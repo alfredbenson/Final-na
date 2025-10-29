@@ -7,14 +7,18 @@
           </div>
         </div>
         <div class="col-md-12 text-center">
-          <p class="copy-right text-center">
-            <span class="logo">
-              <img src="img/bablog.png" alt="Logo" style="width: 2rem; height: 2rem;">
-            </span>
-            <span class="line">|</span>
-            Copyright &copy; <?php echo date('Y');?> <a href="index.php">Ronald's Baboyan</a>. All rights reserved.
-          </p>
-        </div>
+  <p class="copy-right text-center" style="color:rgba(245, 245, 245, 1);">
+    <span class="logo">
+      <img src="img/bablog.png" alt="Logo" style="width: 2rem; height: 2rem;">
+    </span>
+    <span class="line">|</span>
+    Copyright 
+    <span style="color: black; margin: 0 6px;">&copy;</span>
+    <span style="margin-right: 8px;"><?php echo date('Y'); ?></span>
+    <a href="index.php" style="color:rgba(245, 245, 245, 1);">Ronald's Baboyan</a>. All rights reserved.
+  </p>
+</div>
+
       </div>
     </div>
   </div>

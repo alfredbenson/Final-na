@@ -820,12 +820,12 @@ if (isset($_POST['recordid'])) {
         <input type="date" name="breedingdate" id="breedingDate"  value="<?php echo $isValid ? $breedValue : ''; ?>"/>
     </div>
 
-    <!-- Fields for Lactating -->
+   <!-- Fields for Lactating -->
     <div class="col" id="gestatingFields" style="<?php echo ($pig['status'] == "Lactating") ? 'display: block;' : 'display: none;'; ?>">
         <label for="forrowingDate" class="me-1">Farrowing Date:</label>
         <input type="date" name="forrowingdate" id="forrowingDate"  value="<?= (!empty($forrowValue) && $forrowValue != '0000-00-00') 
             ? trim(date('Y-m-d', strtotime($forrowValue))) 
-            : '' ?>">
+            : '' ?>" readonly>
    </div>
     <br>
     <div class="col" id="gestatingFieldsPigletsmale" style="<?php echo ($pig['status'] == "Lactating") ? 'display: block;' : 'display: none;'; ?>">
