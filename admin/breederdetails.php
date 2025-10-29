@@ -777,7 +777,7 @@ if (isset($_POST['recordid'])) {
   </div>
   <div class="col">
   <label for="farrowed"># Farrowed</label>
-    <input type="number" id="farrowed" name="farrowed" class="form-control" placeholder="How many times Farrowed" aria-label="Farrowed" autocomplete="Farrowed" value="<?php echo $pig['total_farrowed']; ?>"readonly/>
+    <input type="number" id="farrowed" name="farrowed" class="form-control" placeholder="How many times Farrowed" aria-label="Farrowed" autocomplete="Farrowed" value="<?php echo $pig['total_farrowed']; ?>"/>
   </div>
 </div>
 <br>
@@ -825,7 +825,7 @@ if (isset($_POST['recordid'])) {
         <label for="forrowingDate" class="me-1">Farrowing Date:</label>
         <input type="date" name="forrowingdate" id="forrowingDate"  value="<?= (!empty($forrowValue) && $forrowValue != '0000-00-00') 
             ? trim(date('Y-m-d', strtotime($forrowValue))) 
-            : '' ?>" readonly>
+            : '' ?>" >
    </div>
     <br>
     <div class="col" id="gestatingFieldsPigletsmale" style="<?php echo ($pig['status'] == "Lactating") ? 'display: block;' : 'display: none;'; ?>">

@@ -83,7 +83,7 @@ $pig = $stmt->fetch(PDO::FETCH_ASSOC);
 $male_remaining = $pig['male'] - ($pig['totaladded_male'] ?? 0);
 $female_remaining =$pig['female'] -  ($pig['totaladded_female '] ?? 0);
 
-$totaladdedpiglets = empty($pig['addedpig']) ? 'disabled' : '';
+$totaladdedpiglets = ($pig['addedpig'] <= 0) ? 'disabled' : '';
 
 $date = !empty($pig['weaneddate']) ? new DateTime($pig['weaneddate']) : null;
 $weaneddate = $date ? $date->format('F j, Y') : null;
@@ -823,7 +823,7 @@ $stmtupdatetpigletdetails = $dbh->prepare("UPDATE piglets SET posted = 1 WHERE i
 </p>
 
                 <p class="card-text"><span>Gender: &nbsp;</span><?php echo htmlentities($result->gender);?></p>
-    <p class="card-text"><span>Feed Intake:</span><br> <?php echo $totalFeeds ?> kg</p>
+    <p class="card-text"><span>Feed Intake:</span><br> <?php echo $totalFeed/$pig['pigs'] .'-'. $totalFeeds/$pig['pigs'] ?> kg</p>
     </div>
     <?php 
 if ($piglets_status == "Sold") {
